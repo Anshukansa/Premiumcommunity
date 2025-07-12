@@ -3,115 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Community - Get Gumtree Jobs FIRST + 50% Off Domino's</title>
+    <title>Premium Community by Veer Krupa Group - Stop Missing Jobs & Deals</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
+            background: #fff;
         }
-        
+
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Urgency Bar */
-        .urgency-bar {
-            background: #ff0000;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            position: fixed;
+        /* Header */
+        .header {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
             top: 0;
-            width: 100%;
-            z-index: 1000;
-            animation: blink 1s infinite;
+            z-index: 100;
         }
 
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.7; }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+            text-align: center;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 80px 0;
             text-align: center;
-            margin-top: 50px;
         }
-        
+
         .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .hero-benefits {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .hero-benefit {
-            background: rgba(255,255,255,0.2);
-            padding: 15px 25px;
-            border-radius: 25px;
+            font-size: 48px;
             font-weight: bold;
-        }
-        
-        .price-box {
-            background: #fff;
-            color: #ff6b6b;
-            padding: 25px;
-            border-radius: 15px;
-            display: inline-block;
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
-        .price-box .original-price {
-            font-size: 1.2rem;
-            text-decoration: line-through;
-            color: #999;
+        .hero .subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
 
-        .price-box .current-price {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #ff6b6b;
-        }
-
-        .slots-left {
-            background: #ffa500;
+        .urgency-badge {
+            background: #e74c3c;
             color: white;
             padding: 15px 30px;
-            border-radius: 25px;
-            font-size: 1.3rem;
+            border-radius: 50px;
+            font-size: 18px;
             font-weight: bold;
-            margin-top: 20px;
             display: inline-block;
-            animation: pulse 1.5s infinite;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
@@ -119,458 +79,379 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-        
+
+        .price-highlight {
+            background: #fff;
+            color: #333;
+            padding: 20px 40px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 20px;
+        }
+
+        .cta-button {
+            background: #27ae60;
+            color: white;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background: #219a52;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
         /* Problem Section */
         .problem {
             padding: 80px 0;
             background: #f8f9fa;
         }
-        
+
         .problem h2 {
-            font-size: 2.8rem;
+            font-size: 36px;
             text-align: center;
             margin-bottom: 50px;
-            color: #ff6b6b;
-            font-weight: 800;
+            color: #e74c3c;
         }
-        
-        .pain-points {
+
+        .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
         }
-        
-        .pain-point {
+
+        .problem-item {
             background: white;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
             text-align: center;
-            border-left: 5px solid #ff6b6b;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
-        
-        .pain-point .icon {
-            font-size: 3.5rem;
+
+        .problem-icon {
+            font-size: 48px;
             margin-bottom: 20px;
         }
-        
-        .pain-point h3 {
-            font-size: 1.4rem;
+
+        .problem-item h3 {
+            font-size: 24px;
             margin-bottom: 15px;
-            color: #ff6b6b;
-            font-weight: bold;
-        }
-
-        .pain-point p {
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        .big-problem {
-            text-align: center;
-            background: #ff6b6b;
-            color: white;
-            padding: 40px;
-            border-radius: 15px;
-            margin-top: 50px;
-        }
-
-        .big-problem h3 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-        
-        /* Solution Section */
-        .solution {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #00a8ff 0%, #0078ff 100%);
-            color: white;
-        }
-        
-        .solution h2 {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 800;
-        }
-
-        .solution .intro {
-            text-align: center;
-            font-size: 1.3rem;
-            margin-bottom: 50px;
-            opacity: 0.95;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-        }
-        
-        .feature {
-            background: rgba(255,255,255,0.15);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-        
-        .feature .icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-        
-        .feature h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-        
-        .feature p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        .feature .highlight {
-            background: #ffa500;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            margin-top: 15px;
-            display: inline-block;
-        }
-        
-        /* Proof Section */
-        .proof {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .proof h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
             color: #333;
         }
 
-        .stats {
+        /* Solution Section */
+        .solution {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .solution h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #27ae60;
+        }
+
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
             margin-bottom: 50px;
         }
 
-        .stat {
-            text-align: center;
-            padding: 30px;
+        .feature-card {
             background: #f8f9fa;
+            padding: 40px;
             border-radius: 15px;
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
         }
 
-        .stat .number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #ff6b6b;
+        .feature-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .value-prop {
+            background: #667eea;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .value-prop h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 80px 0;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .social-proof h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #e74c3c;
             margin-bottom: 10px;
         }
 
-        .stat .label {
-            font-size: 1.1rem;
+        .stat-text {
+            font-size: 16px;
             color: #666;
-            font-weight: bold;
         }
 
         /* Testimonials */
         .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid #00a8ff;
-        }
-        
-        .testimonial .quote {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        
-        .testimonial .author {
-            font-weight: bold;
-            color: #666;
+            padding: 80px 0;
+            background: white;
         }
 
-        .testimonial .result {
-            background: #00a8ff;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 25px;
-            margin-top: 15px;
-            font-weight: bold;
-            display: inline-block;
-        }
-        
-        /* Value Stack */
-        .value-stack {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        
-        .value-stack h2 {
-            font-size: 2.5rem;
+        .testimonials h2 {
+            font-size: 36px;
             text-align: center;
             margin-bottom: 50px;
             color: #333;
         }
-        
-        .value-items {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .value-item {
-            display: flex;
-            align-items: center;
-            padding: 25px;
-            margin-bottom: 15px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .value-item .check {
-            color: #4CAF50;
-            font-size: 2rem;
-            margin-right: 25px;
-            min-width: 50px;
-        }
-        
-        .value-item .text {
-            flex: 1;
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .value-item .text h4 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
+        .testimonial {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
             color: #333;
         }
 
-        .value-item .text p {
-            color: #666;
-            font-size: 1rem;
-        }
-        
-        .value-item .price {
-            font-weight: bold;
-            color: #ff6b6b;
-            font-size: 1.2rem;
-        }
-        
-        .total-value {
-            text-align: center;
-            margin-top: 40px;
-            padding: 40px;
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: white;
-            border-radius: 20px;
-        }
-        
-        .total-value .comparison {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .total-value .original {
-            font-size: 2rem;
-            text-decoration: line-through;
-            opacity: 0.8;
-        }
-        
-        .total-value .discounted {
-            font-size: 3rem;
-            font-weight: 900;
-            margin: 15px 0;
-        }
-
-        .total-value .savings {
-            font-size: 1.3rem;
-            background: #ffa500;
-            padding: 10px 20px;
-            border-radius: 25px;
-            display: inline-block;
-            margin-top: 15px;
-        }
-
-        /* Scarcity Section */
-        .scarcity {
-            padding: 60px 0;
-            background: #ff6b6b;
-            color: white;
-            text-align: center;
-        }
-        
-        .scarcity h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            font-weight: 800;
-        }
-
-        .scarcity-box {
-            background: rgba(255,255,255,0.2);
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .countdown-timer {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .slot-checker {
-            background: #ffa500;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .slot-checker h4 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .slots-remaining {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        /* CTA Section */
-        .cta {
+        /* Pricing Section */
+        .pricing {
             padding: 80px 0;
-            background: linear-gradient(135deg, #00a8ff 0%, #0078ff 100%);
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .pricing-card {
+            background: white;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid #27ae60;
+        }
+
+        .pricing-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .price-display {
+            font-size: 48px;
+            font-weight: bold;
+            color: #27ae60;
+            margin: 20px 0;
+        }
+
+        .price-period {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .features-list {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Guarantee */
+        .guarantee {
+            padding: 80px 0;
+            background: #27ae60;
             color: white;
             text-align: center;
         }
-        
-        .cta h2 {
-            font-size: 3rem;
+
+        .guarantee h2 {
+            font-size: 36px;
             margin-bottom: 30px;
-            font-weight: 800;
         }
 
-        .cta-box {
-            background: rgba(255,255,255,0.1);
-            padding: 50px;
-            border-radius: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            backdrop-filter: blur(10px);
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #ff6b6b;
-            color: white;
-            padding: 25px 50px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
+        .guarantee-badge {
+            background: white;
+            color: #27ae60;
+            padding: 20px 40px;
             border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
             margin: 20px 0;
         }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255,107,107,0.6);
-        }
 
-        .payment-widget {
-            margin: 30px 0;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .payment-widget h3 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        
-        .guarantees {
-            margin-top: 30px;
-            font-size: 1.1rem;
-        }
-
-        .guarantee-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 10px 0;
-        }
-
-        .guarantee-item .icon {
-            margin-right: 10px;
-            font-size: 1.3rem;
-        }
-        
         /* FAQ */
         .faq {
             padding: 80px 0;
             background: white;
         }
-        
+
         .faq h2 {
+            font-size: 36px;
             text-align: center;
             margin-bottom: 50px;
-            font-size: 2.5rem;
             color: #333;
         }
-        
+
         .faq-item {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            border: 2px solid #f0f0f0;
-            border-radius: 15px;
+            background: #f8f9fa;
+            margin-bottom: 20px;
+            border-radius: 10px;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
 
-        .faq-item:hover {
-            border-color: #ff6b6b;
-        }
-        
         .faq-question {
-            background: #f8f9fa;
-            padding: 25px;
+            padding: 20px;
+            background: #667eea;
+            color: white;
             cursor: pointer;
             font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.1rem;
+            font-size: 18px;
         }
-        
+
         .faq-answer {
-            padding: 25px;
+            padding: 20px;
             display: none;
-            font-size: 1rem;
             line-height: 1.6;
         }
-        
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .timer {
+            background: #e74c3c;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
         /* Footer */
         .footer {
             background: #333;
@@ -579,110 +460,93 @@
             text-align: center;
         }
 
-        /* Mobile Responsive */
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 32px;
             }
-            
+
             .hero .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .hero-benefits {
-                flex-direction: column;
-                gap: 15px;
+                font-size: 18px;
             }
 
-            .features {
-                grid-template-columns: 1fr;
-            }
-            
-            .feature {
-                padding: 30px 20px;
-            }
-            
-            .price-box .current-price {
-                font-size: 2rem;
+            .price-highlight {
+                font-size: 20px;
+                padding: 15px 25px;
             }
 
-            .value-item {
-                flex-direction: column;
-                text-align: center;
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 16px;
             }
 
-            .value-item .check {
-                margin-bottom: 15px;
-            }
-
-            .countdown-timer {
-                font-size: 1.5rem;
+            .container {
+                padding: 0 15px;
             }
         }
 
-        .highlight-text {
-            background: #ffa500;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
+        .payment-section {
+            background: #f0f0f0;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 2px dashed #667eea;
+        }
+
+        .payment-placeholder {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border: 2px dashed #ccc;
         }
     </style>
 </head>
 <body>
-    <!-- Urgency Bar -->
-    <div class="urgency-bar">
-        🚨 ONLY 17 SPOTS LEFT! Timer expires in <span id="timer"></span> 🚨
-    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Premium Community by Veer Krupa Group</div>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>STOP Missing Jobs on Gumtree!</h1>
-            <p class="subtitle">Get notified INSTANTLY when new jobs are posted + Save 50% on Domino's every week!</p>
+            <div class="urgency-badge">⚡ LIMITED TIME: Only 47 Spots Left This Month!</div>
+            <h1>Stop Wasting Hours Searching for Jobs & Missing Amazing Deals!</h1>
+            <p class="subtitle">Get instant notifications for new jobs on Gumtree + exclusive Dominos discounts up to 50% OFF</p>
             
-            <div class="hero-benefits">
-                <div class="hero-benefit">⚡ Instant Gumtree Alerts</div>
-                <div class="hero-benefit">🍕 50% Off Domino's</div>
-                <div class="hero-benefit">📱 Telegram Delivery</div>
+            <div class="price-highlight">
+                <span class="price-old">$29/month</span> → <strong>Only $12/month</strong>
             </div>
-
-            <div class="price-box">
-                <div class="original-price">Others charge $47/month</div>
-                <div class="current-price">Only $12/month</div>
-            </div>
-
-            <div class="slots-left">
-                Only 17 Spots Left This Month!
-            </div>
+            
+            <a href="#pricing" class="cta-button">🚀 Join Premium Community Now</a>
         </div>
     </section>
 
     <!-- Problem Section -->
     <section class="problem">
         <div class="container">
-            <h2>Are You TIRED of This?</h2>
-            <div class="pain-points">
-                <div class="pain-point">
-                    <div class="icon">😤</div>
-                    <h3>Checking Gumtree 20 Times a Day</h3>
-                    <p>Refreshing the page every hour hoping to find new jobs, but you're always too late!</p>
+            <h2>Are You Tired of These Daily Struggles?</h2>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <div class="problem-icon">😫</div>
+                    <h3>Endless Job Searching</h3>
+                    <p>You spend 3-4 hours daily refreshing Gumtree, Indeed, and other job sites, only to find the good jobs are already taken by someone who saw them first.</p>
                 </div>
-                <div class="pain-point">
-                    <div class="icon">⏰</div>
-                    <h3>Jobs Disappear in Minutes</h3>
-                    <p>By the time you see a good job, 50 people already applied and it's gone!</p>
+                <div class="problem-item">
+                    <div class="problem-icon">💸</div>
+                    <h3>Missing Great Deals</h3>
+                    <p>You always find out about those amazing 40-50% Dominos discounts AFTER they've expired. Your friends are eating pizza for half price while you pay full price.</p>
                 </div>
-                <div class="pain-point">
-                    <div class="icon">💸</div>
-                    <h3>Wasting Money on Food</h3>
-                    <p>Paying full price at Domino's while searching for jobs burns through your savings!</p>
+                <div class="problem-item">
+                    <div class="problem-icon">⏰</div>
+                    <h3>Wasted Time</h3>
+                    <p>You're refreshing pages, checking multiple websites, and still missing opportunities. Your time is worth more than this endless searching.</p>
                 </div>
-            </div>
-
-            <div class="big-problem">
-                <h3>The REAL Problem:</h3>
-                <p style="font-size: 1.3rem;">While you're manually checking Gumtree, others are getting notifications and applying to jobs BEFORE you even see them!</p>
             </div>
         </div>
     </section>
@@ -690,246 +554,159 @@
     <!-- Solution Section -->
     <section class="solution">
         <div class="container">
-            <h2>Meet Premium Community</h2>
-            <p class="intro">The ONLY Telegram channel that makes you the FIRST to know about Gumtree jobs + saves you money on food!</p>
+            <h2>Here's How We Solve This Problem for You</h2>
             
-            <div class="features">
-                <div class="feature">
-                    <div class="icon">🚀</div>
-                    <h3>Instant Gumtree Job Alerts</h3>
-                    <p>The moment a new job gets posted on Gumtree, you get a notification on your phone. No more checking manually. No more missing opportunities. You'll be the FIRST to apply!</p>
-                    <div class="highlight">Be First in Line!</div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Job Alerts</h3>
+                    <p>The moment a new job gets posted on Gumtree, you get notified instantly on Telegram. No more refreshing pages. Be the first to apply and get the job!</p>
                 </div>
-                <div class="feature">
-                    <div class="icon">🍕</div>
-                    <h3>Domino's Discount Codes</h3>
-                    <p>Get exclusive discount codes for Domino's - 40%, 50% off deals delivered weekly! Save money on food while you job hunt.</p>
-                    <div class="highlight">Save 50% Every Week!</div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍕</div>
+                    <h3>Exclusive Dominos Deals</h3>
+                    <p>Get notified instantly when Dominos releases 40%, 50% or even higher discounts. Never pay full price for pizza again!</p>
+                </div>
+            </div>
+
+            <div class="value-prop">
+                <h3>Instead of wasting 3-4 hours daily searching...</h3>
+                <p>You get everything delivered straight to your phone in seconds. More jobs, better deals, zero effort.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <h2>Join 2,847+ Smart People Who Never Miss Out</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2,847</div>
+                    <div class="stat-text">Active Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">156</div>
+                    <div class="stat-text">Jobs Found Daily</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">89%</div>
+                    <div class="stat-text">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$487</div>
+                    <div class="stat-text">Average Savings</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Proof Section -->
-    <section class="proof">
+    <!-- Testimonials -->
+    <section class="testimonials">
         <div class="container">
-            <h2>Here's What Our Members Are Getting:</h2>
+            <h2>What Our Members Are Saying</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"I got my dream job within 2 days of joining! The instant notifications are a game-changer. Worth every penny!"</p>
+                    <p class="testimonial-author">- Sarah M., Marketing Professional</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Saved over $200 last month just on Dominos deals alone. The membership paid for itself in week one!"</p>
+                    <p class="testimonial-author">- Mike R., Student</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"No more endless scrolling through job sites. I get the best jobs before anyone else even sees them."</p>
+                    <p class="testimonial-author">- Priya K., Freelancer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Get Everything for Just $12/Month</h2>
+            <p style="font-size: 18px; margin-bottom: 30px; color: #666;">Regular price $29/month - Limited time special pricing</p>
             
-            <div class="stats">
-                <div class="stat">
-                    <div class="number">847</div>
-                    <div class="label">Jobs Found This Month</div>
-                </div>
-                <div class="stat">
-                    <div class="number">73%</div>
-                    <div class="label">Get Interviews</div>
-                </div>
-                <div class="stat">
-                    <div class="number">$156</div>
-                    <div class="label">Average Monthly Savings</div>
-                </div>
-                <div class="stat">
-                    <div class="number">2.3</div>
-                    <div class="label">Days to Get Job</div>
-                </div>
-            </div>
+            <div class="pricing-card">
+                <div class="pricing-badge">🔥 SPECIAL LAUNCH PRICE</div>
+                <div class="price-display">$12</div>
+                <div class="price-period">per month</div>
+                
+                <ul class="features-list">
+                    <li>Instant job notifications from Gumtree</li>
+                    <li>Exclusive Dominos discount alerts (40-50% OFF)</li>
+                    <li>Telegram channel access</li>
+                    <li>24/7 real-time updates</li>
+                    <li>Mobile-friendly notifications</li>
+                    <li>Cancel anytime</li>
+                </ul>
 
-            <div class="testimonials">
-                <div class="testimonial">
-                    <div class="quote">"Got a notification at 9:23 AM, applied at 9:24 AM, got called for interview at 10:15 AM. This is crazy fast!"</div>
-                    <div class="author">- Rajesh, Mumbai</div>
-                    <div class="result">Got Job in 1 Day!</div>
+                <div class="payment-section">
+                    <h4 style="margin-bottom: 15px; color: #333;">Choose Your Payment Method:</h4>
+                    <div class="payment-placeholder">
+                        [ Ko-fi Payment Widget Will Be Added Here ]
+                        <br><br>
+                        <small>Secure payment processing via Ko-fi</small>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <div class="quote">"I was manually checking Gumtree for weeks with no luck. First day with Premium Community, I got 3 job alerts and 2 calls back!"</div>
-                    <div class="author">- Priya, Delhi</div>
-                    <div class="result">3 Opportunities in 1 Day!</div>
-                </div>
-                <div class="testimonial">
-                    <div class="quote">"The Domino's codes alone saved me $87 last month. The job alerts are just a bonus at this point!"</div>
-                    <div class="author">- Amit, Bangalore</div>
-                    <div class="result">Saved $87 on Food!</div>
-                </div>
+                
+                <p style="font-size: 14px; color: #666; margin-top: 20px;">
+                    * After payment, you'll receive Telegram channel access within 5 minutes
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Value Stack -->
-    <section class="value-stack">
+    <!-- Guarantee -->
+    <section class="guarantee">
         <div class="container">
-            <h2>What You Get for Just $12/month:</h2>
-            <div class="value-items">
-                <div class="value-item">
-                    <span class="check">✅</span>
-                    <div class="text">
-                        <h4>Instant Gumtree Job Notifications</h4>
-                        <p>Every new job posted, delivered to your phone instantly</p>
-                    </div>
-                    <div class="price">$67/month value</div>
-                </div>
-                <div class="value-item">
-                    <span class="check">✅</span>
-                    <div class="text">
-                        <h4>Weekly Domino's 40-50% Off Codes</h4>
-                        <p>Exclusive discount codes for massive food savings</p>
-                    </div>
-                    <div class="price">$89/month value</div>
-                </div>
-                <div class="value-item">
-                    <span class="check">✅</span>
-                    <div class="text">
-                        <h4>Premium Telegram Community Access</h4>
-                        <p>Network with other job seekers and share tips</p>
-                    </div>
-                    <div class="price">$25/month value</div>
-                </div>
-                <div class="value-item">
-                    <span class="check">✅</span>
-                    <div class="text">
-                        <h4>24/7 Job Monitoring</h4>
-                        <p>We watch Gumtree so you don't have to</p>
-                    </div>
-                    <div class="price">$45/month value</div>
-                </div>
-                <div class="value-item">
-                    <span class="check">✅</span>
-                    <div class="text">
-                        <h4>Mobile-First Delivery</h4>
-                        <p>Get alerts anywhere, anytime on your phone</p>
-                    </div>
-                    <div class="price">$19/month value</div>
-                </div>
-            </div>
-            
-            <div class="total-value">
-                <div class="comparison">If you bought these services separately:</div>
-                <div class="original">Total Value: $245/month</div>
-                <div class="discounted">Your Price: Only $12/month</div>
-                <div class="savings">You Save $233 Every Month!</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scarcity Section -->
-    <section class="scarcity">
-        <div class="container">
-            <h2>⚠️ WARNING: Limited Spots Available!</h2>
-            <div class="scarcity-box">
-                <p style="font-size: 1.3rem; margin-bottom: 20px;">We limit members to keep job competition low and maintain exclusive Domino's deals.</p>
-                
-                <div class="countdown-timer">
-                    Offer expires in: <span id="countdown">23:47:33</span>
-                </div>
-                
-                <div class="slot-checker">
-                    <h4>Real-Time Availability Check:</h4>
-                    <div class="slots-remaining">17 spots remaining out of 100</div>
-                </div>
-                
-                <p style="font-size: 1.1rem; margin-top: 20px;">Once we hit 100 members, we close registration until next month!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-box">
-                <h2>Ready to Get Jobs FIRST?</h2>
-                <p style="font-size: 1.3rem; margin-bottom: 30px;">Join 83 smart job seekers who never miss an opportunity!</p>
-                
-                <div class="payment-widget">
-                    <h3 style="color: #333;">🔥 Secure Your Spot Now - Only $12/month</h3>
-                    <!-- Ko-fi widget will go here -->
-                    <p style="color: #666; margin: 15px 0;">💳 Secure payment via Ko-fi • ⚡ Instant access after payment</p>
-                </div>
-                
-                <div class="guarantees">
-                    <div class="guarantee-item">
-                        <span class="icon">💰</span>
-                        <span>30-Day Money Back Guarantee</span>
-                    </div>
-                    <div class="guarantee-item">
-                        <span class="icon">🔒</span>
-                        <span>100% Secure Payment</span>
-                    </div>
-                    <div class="guarantee-item">
-                        <span class="icon">⚡</span>
-                        <span>Instant Telegram Access</span>
-                    </div>
-                    <div class="guarantee-item">
-                        <span class="icon">❌</span>
-                        <span>Cancel Anytime</span>
-                    </div>
-                </div>
-            </div>
+            <h2>Your Success is 100% Guaranteed</h2>
+            <div class="guarantee-badge">30-Day Money Back Guarantee</div>
+            <p style="font-size: 18px; margin-top: 20px;">If you don't find at least one great job opportunity or save money on deals within 30 days, we'll refund every penny. No questions asked.</p>
         </div>
     </section>
 
     <!-- FAQ -->
     <section class="faq">
         <div class="container">
-            <h2>Questions? We've Got Answers!</h2>
+            <h2>Frequently Asked Questions</h2>
             
             <div class="faq-item">
-                <div class="faq-question">
-                    How fast do I get job notifications?
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    Within 30 seconds of a job being posted on Gumtree! Our system monitors Gumtree 24/7 and sends instant notifications to your Telegram.
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)">How quickly will I get notifications?</div>
+                <div class="faq-answer">You'll receive notifications within 30 seconds of new jobs being posted or deals going live. Our system monitors 24/7.</div>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">
-                    What types of jobs do you monitor?
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    ALL jobs posted on Gumtree - from entry level to management, part-time to full-time, across all industries and locations.
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)">What types of jobs do you notify about?</div>
+                <div class="faq-answer">We monitor all job categories on Gumtree - from part-time to full-time, freelance to permanent positions across all industries.</div>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">
-                    How do I get the Domino's discounts?
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    Every week we post exclusive Domino's discount codes (40-50% off) in the Telegram channel. Just use the code when ordering online or show it in-store.
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)">How do I access the Telegram channel?</div>
+                <div class="faq-answer">After payment, you'll receive an email with your private Telegram channel invitation link within 5 minutes.</div>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">
-                    What if I don't get a job in 30 days?
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    We offer a 100% money-back guarantee. If you don't get at least 10 quality job leads in your first 30 days, we'll refund every penny.
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)">Can I cancel anytime?</div>
+                <div class="faq-answer">Yes! You can cancel your subscription anytime. No contracts, no hidden fees.</div>
             </div>
             
             <div class="faq-item">
-                <div class="faq-question">
-                    Can I cancel anytime?
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    Yes! Cancel your subscription anytime through Ko-fi. No contracts, no hidden fees, no questions asked.
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)">How often do Dominos deals come up?</div>
+                <div class="faq-answer">Dominos typically releases special deals 3-5 times per week. You'll never miss another discount again!</div>
             </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    Why only 100 members?
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    We limit membership to keep job competition low for our members and to maintain exclusive deals with Domino's. Quality over quantity!
-                </div>
-            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Don't Wait - Limited Spots Available!</h2>
+            <div class="timer">⏰ This offer expires in: <span id="countdown">3 days 14 hours</span></div>
+            <p style="font-size: 18px; margin: 20px 0;">Join now and never miss another job opportunity or great deal again.</p>
+            <a href="#pricing" class="cta-button">🚀 Secure My Spot for $12/Month</a>
+            <p style="font-size: 14px; margin-top: 20px; opacity: 0.8;">⚠️ Only 47 spots left this month - Once full, next availability is next month at $29/month</p>
         </div>
     </section>
 
@@ -937,113 +714,46 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Premium Community by Veer Krupa Group. All rights reserved.</p>
-            <p style="margin-top: 10px;">⚡ Instant Gumtree job alerts • 🍕 Exclusive Domino's discounts • 📱 Delivered via Telegram</p>
+            <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">Questions? Contact us via our Telegram channel after joining.</p>
         </div>
     </footer>
 
     <script>
-        // Countdown Timer
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const targetTime = now + (23 * 60 * 60 * 1000) + (47 * 60 * 1000) + (33 * 1000); // 23:47:33 from now
-            
-            const interval = setInterval(function() {
-                const currentTime = new Date().getTime();
-                const timeLeft = targetTime - currentTime;
-                
-                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                
-                document.getElementById("countdown").innerHTML = 
-                    hours + "h " + minutes + "m " + seconds + "s";
-                
-                if (timeLeft < 0) {
-                    clearInterval(interval);
-                    document.getElementById("countdown").innerHTML = "EXPIRED";
-                }
-            }, 1000);
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            answer.classList.toggle('active');
         }
 
-        // Urgency Timer
-        function updateUrgencyTimer() {
-            const now = new Date().getTime();
-            const targetTime = now + (4 * 60 * 60 * 1000) + (23 * 60 * 1000); // 4:23 from now
-            
-            const interval = setInterval(function() {
-                const currentTime = new Date().getTime();
-                const timeLeft = targetTime - currentTime;
-                
-                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                
-                document.getElementById("timer").innerHTML = 
-                    hours + "h " + minutes + "m";
-                
-                if (timeLeft < 0) {
-                    clearInterval(interval);
-                    document.getElementById("timer").innerHTML = "EXPIRED";
-                }
-            }, 1000);
-        }
-
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isOpen = answer.style.display === 'block';
-                
-                // Close all answers
-                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-                document.querySelectorAll('.faq-question span').forEach(s => s.textContent = '+');
-                
-                // Toggle current answer
-                if (!isOpen) {
-                    answer.style.display = 'block';
-                    question.querySelector('span').textContent = '-';
-                }
-            });
-        });
-
-        // Simulate slot reduction
-        function updateSlots() {
-            const slotsElements = document.querySelectorAll('.slots-remaining, .slots-left');
-            let currentSlots = 17;
-            
-            setInterval(() => {
-                if (Math.random() < 0.3 && currentSlots > 5) { // 30% chance every 30 seconds
-                    currentSlots--;
-                    slotsElements.forEach(element => {
-                        if (element.textContent.includes('spots')) {
-                            element.textContent = `Only ${currentSlots} Spots Left This Month!`;
-                        } else {
-                            element.textContent = `${currentSlots} spots remaining out of 100`;
-                        }
-                    });
-                }
-            }, 30000); // Check every 30 seconds
-        }
-
-        // Initialize timers and slot updates
-        document.addEventListener('DOMContentLoaded', () => {
-            updateCountdown();
-            updateUrgencyTimer();
-            updateSlots();
-        });
-
-        // Smooth scrolling
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
+
+        // Simple countdown timer (cosmetic)
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            const now = new Date().getTime();
+            const targetTime = now + (3 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000); // 3 days 14 hours from now
+            
+            setInterval(() => {
+                const currentTime = new Date().getTime();
+                const timeLeft = targetTime - currentTime;
+                
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                
+                countdownElement.textContent = `${days} days ${hours} hours ${minutes} minutes`;
+            }, 60000); // Update every minute
+        }
+        
+        updateCountdown();
     </script>
 </body>
 </html>
