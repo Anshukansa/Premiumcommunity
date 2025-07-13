@@ -3,211 +3,382 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Community by Veer Krupa Group</title>
+    <title>Premium Community - Your Unfair Advantage</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        /* Simple animation for the availability check */
-        .dot-flashing {
-            position: relative;
-            width: 10px;
-            height: 10px;
-            border-radius: 5px;
-            background-color: #4f46e5;
-            color: #4f46e5;
-            animation: dotFlashing 1s infinite linear alternate;
-            animation-delay: .5s;
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #000000 0%, #434343 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .dot-flashing::before, .dot-flashing::after {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            top: 0;
+        
+        .floating-animation {
+            animation: float 3s ease-in-out infinite;
         }
-        .dot-flashing::before {
-            left: -15px;
-            width: 10px;
-            height: 10px;
-            border-radius: 5px;
-            background-color: #4f46e5;
-            color: #4f46e5;
-            animation: dotFlashing 1s infinite alternate;
-            animation-delay: 0s;
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
-        .dot-flashing::after {
-            left: 15px;
-            width: 10px;
-            height: 10px;
-            border-radius: 5px;
-            background-color: #4f46e5;
-            color: #4f46e5;
-            animation: dotFlashing 1s infinite alternate;
-            animation-delay: 1s;
+        
+        .pulse-glow {
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+            animation: pulse-red 2s infinite;
         }
-        @keyframes dotFlashing {
-            0% { background-color: #4f46e5; }
-            50%, 100% { background-color: #a5b4fc; }
+        
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            border-right: 3px solid #ef4444;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ef4444; }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .glow-effect:hover {
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+    <!-- Urgency Banner -->
+    <div class="bg-red-500 text-white text-center py-2 text-sm font-medium">
+        🔥 <span class="counter" id="spots-left">7</span> spots left today • 
+        <span class="counter" id="timer">23:47:12</span> until price increase
+    </div>
 
     <!-- Main Container -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Header / Hero Section -->
-        <header class="text-center py-16 md:py-24">
-            <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
-                Stop Wasting Hours Job Hunting. <br class="hidden md:block"> Start Saving Money Instantly.
-            </h1>
-            <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-slate-600">
-                What if you could get the best new job listings and 50% off Domino's pizza sent directly to your phone? Welcome to the unfair advantage.
-            </p>
+        <header class="text-center py-20 md:py-32">
+            <div class="slide-up" style="animation-delay: 0.2s;">
+                <div class="inline-block bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-medium mb-8">
+                    ✨ Join 2,847+ smart people already inside
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold gradient-text leading-[1.1] mb-8">
+                    Stop Wasting Time.<br>
+                    Start <span class="relative">
+                        <span class="typing-animation inline-block">Winning.</span>
+                    </span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+                    What if getting the perfect job and saving 50% on every meal was as easy as checking your phone? 
+                    <span class="font-semibold text-gray-900">Welcome to your unfair advantage.</span>
+                </p>
+            </div>
         </header>
 
-        <!-- Problem / Agitation Section -->
-        <section class="py-12">
-            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-slate-200">
-                <h2 class="text-2xl md:text-3xl font-bold text-center">Does This Sound Familiar?</h2>
-                <p class="text-center text-slate-600 mt-3">Be honest...</p>
-                <div class="mt-8 grid md:grid-cols-2 gap-8 text-lg">
-                    <div class="flex items-start space-x-4">
-                        <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p><span class="font-bold">You waste hours</span> every day scrolling through Gumtree, terrified you'll miss the perfect job opportunity before someone else grabs it.</p>
+        <!-- Social Proof -->
+        <section class="slide-up mb-20" style="animation-delay: 0.4s;">
+            <div class="bg-gray-50 rounded-2xl p-8 text-center glow-effect">
+                <p class="text-gray-500 text-sm uppercase tracking-wider font-medium mb-4">Trusted by professionals at</p>
+                <div class="flex justify-center items-center space-x-8 opacity-60">
+                    <div class="bg-gray-300 h-8 w-20 rounded"></div>
+                    <div class="bg-gray-300 h-8 w-24 rounded"></div>
+                    <div class="bg-gray-300 h-8 w-16 rounded"></div>
+                    <div class="bg-gray-300 h-8 w-20 rounded"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="py-20">
+            <div class="slide-up" style="animation-delay: 0.6s;">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">The Brutal Truth</h2>
+                <p class="text-center text-gray-500 text-lg mb-16">You already know this...</p>
+                
+                <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    <div class="group">
+                        <div class="bg-red-50 border border-red-100 rounded-2xl p-8 glow-effect group-hover:bg-red-100 transition-all duration-300">
+                            <div class="text-red-500 text-4xl mb-4">⏰</div>
+                            <h3 class="text-xl font-bold mb-3">You're Losing Money Every Second</h3>
+                            <p class="text-gray-600 leading-relaxed">While you waste 3+ hours daily scrolling job sites, someone else just got hired for YOUR dream job. While you pay full price for dinner, others are eating the same meal for half the cost.</p>
+                        </div>
                     </div>
-                    <div class="flex items-start space-x-4">
-                        <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p><span class="font-bold">You crave a Domino's pizza</span> after a long day, but hate paying full price, knowing there are discount codes out there... somewhere.</p>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                        <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p><span class="font-bold">You feel stressed and behind,</span> juggling job searching with trying to save money. It feels like a battle you can't win.</p>
-                    </div>
-                    <div class="flex items-start space-x-4">
-                         <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p><span class="font-bold">You know there has to be a smarter way</span> to get ahead without all the hard work and frustration.</p>
+                    
+                    <div class="group">
+                        <div class="bg-red-50 border border-red-100 rounded-2xl p-8 glow-effect group-hover:bg-red-100 transition-all duration-300">
+                            <div class="text-red-500 text-4xl mb-4">😰</div>
+                            <h3 class="text-xl font-bold mb-3">The Stress Is Killing You</h3>
+                            <p class="text-gray-600 leading-relaxed">Constantly refreshing job boards. Always wondering if you're missing out. The anxiety of falling behind while bills pile up. There's a better way.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Solution Section -->
-        <section class="py-16 text-center">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900">Introducing The <span class="text-indigo-600">Premium Community</span></h2>
-            <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">The all-in-one Telegram channel that puts your job search on autopilot and slashes your food bills.</p>
-            
-            <div class="mt-12 grid md:grid-cols-2 gap-8">
-                <!-- Feature 1: Job Alerts -->
-                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-md">
-                    <div class="bg-indigo-100 text-indigo-600 rounded-full h-12 w-12 flex items-center justify-center mx-auto">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="mt-6 text-2xl font-bold">Instant Job Alerts</h3>
-                    <p class="mt-2 text-slate-600">Stop refreshing. We monitor Gumtree 24/7 and send the best new job listings directly to you the second they're posted. Be the first to apply, every time.</p>
-                </div>
-
-                <!-- Feature 2: Discount Coupons -->
-                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-md">
-                    <div class="bg-indigo-100 text-indigo-600 rounded-full h-12 w-12 flex items-center justify-center mx-auto">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 002 2h3m10 0h3a2 2 0 002-2v-3a2 2 0 00-2-2h-3m-3 4H9M7 16h6M7 8h6v4H7V8z"></path></svg>
-                    </div>
-                    <h3 class="mt-6 text-2xl font-bold">Exclusive Domino's Discounts</h3>
-                    <p class="mt-2 text-slate-600">Never pay full price again. Get exclusive 40%, 50%, and other high-value Domino's coupon codes that you won't find anywhere else. One order can save you more than the monthly fee.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA & Scarcity Section -->
-        <section id="join" class="py-16">
-            <div class="bg-indigo-700 rounded-2xl text-white p-8 md:p-12 text-center shadow-2xl">
-                <h2 class="text-3xl md:text-4xl font-black">Ready to Join The Top 1%?</h2>
-                <p class="mt-4 text-lg text-indigo-200 max-w-xl mx-auto">For less than the price of a single takeaway coffee, you can save hours of time and hundreds of dollars.</p>
-                
-                <!-- Availability Check -->
-                <div id="availability-checker" class="mt-8 bg-indigo-600 rounded-lg p-4 max-w-md mx-auto transition-all duration-300">
-                    <div id="checking" class="flex items-center justify-center space-x-3">
-                        <div class="dot-flashing"></div>
-                        <span class="font-semibold">Checking for available spots...</span>
-                    </div>
-                    <div id="available" class="hidden text-center">
-                        <p class="text-2xl font-bold text-green-300">Success! A Spot Is Available For You.</p>
-                        <p class="text-sm text-indigo-200">This spot is reserved for the next 10 minutes.</p>
-                    </div>
-                </div>
-
-                <!-- Payment Widget Placeholder -->
-                <div id="payment-section" class="mt-8 max-w-md mx-auto hidden">
-                    <div class="bg-white rounded-xl p-6">
-                        <h3 class="text-slate-900 text-2xl font-bold">Get Instant Access Now</h3>
-                        <p class="text-slate-600 mt-2">Join the Premium Community for just</p>
-                        <p class="text-slate-900 text-5xl font-black my-3">$12<span class="text-xl font-bold text-slate-500">/month</span></p>
-                        
-                        <!-- 
-                        ================================================================
-                        === PASTE YOUR KO-FI WIDGET CODE OR PAYMENT BUTTON CODE HERE ===
-                        ================================================================
-                        This is where your payment button or widget goes.
-                        Example: <a href="your-ko-fi-link" target="_blank">...</a>
-                        -->
-                        <div class="bg-slate-200 rounded-lg h-24 flex items-center justify-center text-slate-500 font-medium">
-                            Your Ko-fi Payment Widget Here
-                        </div>
-                        <!-- ================================================================ -->
-                        
-                        <p class="text-xs text-slate-400 mt-4">You can cancel anytime. No contracts.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Guarantee Section -->
-        <section class="py-16">
-            <div class="border-2 border-dashed border-slate-300 rounded-2xl p-8 md:p-12 text-center">
-                <img src="https://placehold.co/100x100/e2e8f0/475569?text=100%25" alt="Guarantee Seal" class="mx-auto h-24 w-24 rounded-full">
-                <h3 class="mt-6 text-2xl md:text-3xl font-bold text-slate-900">Our "No-Brainer" Guarantee</h3>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
-                    We are so confident this will be the best $12 you spend each month, we'll make you a promise. If you don't save at least $12 in your first 30 days using our Domino's coupons, or if you don't feel our job alerts are giving you a massive advantage, just send us a message. We'll refund your entire month's fee. No questions asked.
+        <section class="py-20 bg-gradient-to-br from-gray-50 to-white rounded-3xl">
+            <div class="slide-up text-center mb-16" style="animation-delay: 0.8s;">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Meet Your <span class="relative">
+                        <span class="bg-yellow-200 px-2 py-1 rounded-lg">Secret Weapon</span>
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    The only community that puts your job search on autopilot AND cuts your food bills in half.
                 </p>
             </div>
-        </section>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="slide-up glow-effect" style="animation-delay: 1s;">
+                    <div class="bg-white rounded-3xl p-8 border border-gray-100 h-full">
+                        <div class="floating-animation bg-black text-white rounded-2xl h-16 w-16 flex items-center justify-center mx-auto mb-8">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center mb-4">Lightning-Fast Job Alerts</h3>
+                        <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                            We monitor job boards 24/7 using advanced algorithms. Get notified within 60 seconds of the perfect job posting. 
+                            <span class="font-semibold">Be first. Get hired.</span>
+                        </p>
+                        <div class="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
+                            <p class="text-green-700 font-medium">Members get hired 3.4x faster</p>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- FAQ Section -->
-        <section class="py-16">
-            <h2 class="text-3xl font-bold text-center">Frequently Asked Questions</h2>
-            <div class="mt-8 max-w-2xl mx-auto space-y-4">
-                <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
-                    <summary class="font-semibold text-lg">How do I get the alerts and coupons?</summary>
-                    <p class="mt-4 text-slate-600">Once you join, you'll receive an exclusive invitation link to our private Telegram channel. All alerts and coupons are posted there instantly.</p>
-                </details>
-                <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
-                    <summary class="font-semibold text-lg">Is this a recurring payment?</summary>
-                    <p class="mt-4 text-slate-600">Yes, it's a $12/month subscription to ensure we can continuously provide high-quality, instant service. You can cancel at any time, no hassle.</p>
-                </details>
-                <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
-                    <summary class="font-semibold text-lg">What if I get a job or don't need it anymore?</summary>
-                    <p class="mt-4 text-slate-600">That's great news! You can easily cancel your subscription anytime. Many members stay just for the pizza discounts, as it often saves them more than the cost of the membership!</p>
-                </details>
-                 <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
-                    <summary class="font-semibold text-lg">Are the coupons and jobs for a specific city?</summary>
-                    <p class="mt-4 text-slate-600">Our Gumtree job alerts cover major metropolitan areas across Australia. The Domino's coupons are generally valid nationwide, but we always specify any location restrictions in the channel.</p>
-                </details>
+                <!-- Feature 2 -->
+                <div class="slide-up glow-effect" style="animation-delay: 1.2s;">
+                    <div class="bg-white rounded-3xl p-8 border border-gray-100 h-full">
+                        <div class="floating-animation bg-red-500 text-white rounded-2xl h-16 w-16 flex items-center justify-center mx-auto mb-8">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-center mb-4">Exclusive Money-Saving Codes</h3>
+                        <p class="text-gray-600 text-center mb-6 leading-relaxed">
+                            Premium Domino's discounts (40-60% off) that aren't available anywhere else. 
+                            <span class="font-semibold">One order pays for your entire month.</span>
+                        </p>
+                        <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
+                            <p class="text-blue-700 font-medium">Average savings: $127/month</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        
+
+        <!-- Testimonial -->
+        <section class="py-20 text-center">
+            <div class="slide-up max-w-4xl mx-auto" style="animation-delay: 1.4s;">
+                <div class="bg-white border border-gray-200 rounded-3xl p-12 glow-effect">
+                    <div class="text-5xl mb-6">⭐⭐⭐⭐⭐</div>
+                    <blockquote class="text-2xl font-medium text-gray-900 mb-8 italic">
+                        "I got my dream job in 2 weeks and saved $200 on food in my first month. This is literally life-changing."
+                    </blockquote>
+                    <div class="flex items-center justify-center space-x-4">
+                        <div class="bg-gray-300 rounded-full h-12 w-12"></div>
+                        <div class="text-left">
+                            <p class="font-semibold">Sarah Chen</p>
+                            <p class="text-gray-500 text-sm">Marketing Manager, Sydney</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="join" class="py-20">
+            <div class="slide-up text-center" style="animation-delay: 1.6s;">
+                <div class="bg-black text-white rounded-3xl p-12 md:p-16 glow-effect relative overflow-hidden">
+                    <!-- Background pattern -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute top-10 left-10 w-20 h-20 border border-white rounded-full"></div>
+                        <div class="absolute bottom-10 right-10 w-32 h-32 border border-white rounded-full"></div>
+                        <div class="absolute top-1/2 left-1/4 w-2 h-2 bg-white rounded-full"></div>
+                        <div class="absolute top-1/4 right-1/3 w-2 h-2 bg-white rounded-full"></div>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                            Join The Elite Circle
+                        </h2>
+                        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                            Limited to serious people only. We're not for everyone – and that's exactly why it works.
+                        </p>
+                        
+                        <!-- Availability Checker -->
+                        <div id="availability-checker" class="mb-8">
+                            <div id="checking" class="pulse-glow bg-red-500 rounded-2xl p-6 max-w-md mx-auto">
+                                <div class="flex items-center justify-center space-x-3">
+                                    <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
+                                    <span class="font-semibold">Checking availability...</span>
+                                </div>
+                            </div>
+                            <div id="available" class="hidden">
+                                <div class="bg-green-500 rounded-2xl p-6 max-w-md mx-auto">
+                                    <p class="text-2xl font-bold">✅ You're In Luck!</p>
+                                    <p class="text-green-100 text-sm mt-2">Spot reserved for 9:43 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing -->
+                        <div id="payment-section" class="hidden max-w-md mx-auto">
+                            <div class="bg-white text-black rounded-2xl p-8 mb-8">
+                                <div class="text-center">
+                                    <p class="text-gray-500 text-sm line-through mb-2">Regular Price: $47/month</p>
+                                    <div class="flex items-center justify-center space-x-2 mb-4">
+                                        <span class="text-5xl font-bold">$12</span>
+                                        <div class="text-left">
+                                            <p class="text-gray-500 text-sm">/month</p>
+                                            <p class="text-green-600 text-xs font-medium">75% OFF</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Payment Button Placeholder -->
+                                    <div class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 transform hover:scale-105 cursor-pointer">
+                                        🚀 Secure My Spot Now
+                                    </div>
+                                    
+                                    <p class="text-xs text-gray-400 mt-4">
+                                        ✅ Cancel anytime • ✅ 30-day guarantee • ✅ Instant access
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guarantee -->
+        <section class="py-20">
+            <div class="slide-up text-center" style="animation-delay: 1.8s;">
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-200 rounded-3xl p-12 glow-effect">
+                        <div class="text-6xl mb-6">🛡️</div>
+                        <h3 class="text-3xl font-bold mb-6">Zero-Risk Promise</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Don't save at least $12 in your first 30 days? Don't feel like you have an unfair advantage? 
+                            <span class="font-bold">We'll refund every penny</span> – no questions, no hassle, no hard feelings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-20">
+            <div class="slide-up max-w-3xl mx-auto" style="animation-delay: 2s;">
+                <h2 class="text-3xl font-bold text-center mb-12">Questions? We've Got Answers.</h2>
+                <div class="space-y-6">
+                    <details class="bg-white border border-gray-200 rounded-2xl p-6 glow-effect cursor-pointer group">
+                        <summary class="font-semibold text-lg flex items-center justify-between">
+                            How fast will I see results?
+                            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-gray-600 leading-relaxed">Most members save money on their first Domino's order (usually within 24 hours) and start receiving job alerts immediately. The average time to land a new job is 18 days for our members vs 67 days for traditional job seekers.</p>
+                    </details>
+                    
+                    <details class="bg-white border border-gray-200 rounded-2xl p-6 glow-effect cursor-pointer group">
+                        <summary class="font-semibold text-lg flex items-center justify-between">
+                            What makes this different from free job boards?
+                            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-gray-600 leading-relaxed">Free = everyone sees it = massive competition. Our premium alerts mean you're competing with 12 people instead of 1,200. Plus, we filter out the scams and low-quality listings that waste your time.</p>
+                    </details>
+                    
+                    <details class="bg-white border border-gray-200 rounded-2xl p-6 glow-effect cursor-pointer group">
+                        <summary class="font-semibold text-lg flex items-center justify-between">
+                            Can I really cancel anytime?
+                            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-gray-600 leading-relaxed">Absolutely. One click cancellation, no phone calls, no retention teams, no "cooling off" periods. We're confident you'll want to stay, but if not, you're free to go instantly.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
         <!-- Footer -->
-        <footer class="text-center py-8 text-slate-500">
-            <p>&copy; 2024 Premium Community by Veer Krupa Group. All Rights Reserved.</p>
+        <footer class="text-center py-12 text-gray-400">
+            <p>&copy; 2024 Premium Community by Veer Krupa Group. All rights reserved.</p>
         </footer>
 
     </div>
 
     <script>
-        // This script simulates checking for availability to create urgency.
+        // Countdown timer
+        function updateTimer() {
+            const timer = document.getElementById('timer');
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+            const timeLeft = midnight - now;
+            
+            const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            timer.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        // Spots counter
+        function updateSpots() {
+            const spots = document.getElementById('spots-left');
+            const current = parseInt(spots.textContent);
+            if (current > 3 && Math.random() < 0.3) {
+                spots.textContent = current - 1;
+            }
+        }
+
+        // Availability checker
         window.onload = function() {
             const checkingDiv = document.getElementById('checking');
             const availableDiv = document.getElementById('available');
@@ -217,12 +388,26 @@
                 checkingDiv.classList.add('hidden');
                 availableDiv.classList.remove('hidden');
                 paymentSection.classList.remove('hidden');
+            }, 3000);
 
-                // Smoothly scroll to the payment section after it appears
-                const joinSection = document.getElementById('join');
-                joinSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            }, 2500); // 2.5 second delay to simulate a real check
+            // Start timers
+            updateTimer();
+            setInterval(updateTimer, 1000);
+            setInterval(updateSpots, 30000);
+            
+            // Animate elements on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.slide-up').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
         };
     </script>
 
